@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTML Reviewer</title>
+<style>
+    body{background-color: rgb(31, 30, 30); color: white;}
+</style>
+</head>
+<body>
+
+<h1>HTML Reviewer</h1>
+<p>Study guide based on the HTML lessons of the course (Topics 1&ndash;13). CSS lessons are not included yet.</p>
+
+<h2>Table of Contents</h2>
+<ol>
+<li>Introduction to HTML</li>
+<li>Setup: VS Code, Project Folder, Live Server</li>
+<li>HTML Basics</li>
+<li>Hyperlinks</li>
+<li>Images</li>
+<li>Audio</li>
+<li>Video</li>
+<li>Favicons</li>
+<li>Text Formatting</li>
+<li>Span &amp; Div</li>
+<li>Lists</li>
+<li>Tables</li>
+<li>Buttons</li>
+<li>Forms</li>
+<li>Headers &amp; Footers</li>
+<li>Quick Reference: Tags and Attributes</li>
+<li>Self-Check Questions</li>
+<li>Quick Reference: Tags and Attributes</li>
+</ol>
+
+<hr>
+
+<h2 id="t1">1. Introduction to HTML</h2>
+<ul>
+<li><strong>HTML</strong> = HyperText Markup Language.</li>
+<li><strong>Tags</strong> (markup) tell a web browser how content should be displayed.</li>
+<li>Tags usually come in <strong>pairs</strong> with content sandwiched between them: an opening tag and a closing tag (the closing tag has a forward slash).</li>
+<li>Examples: header tags (titles), <code>&lt;p&gt;</code> (paragraphs), <code>&lt;a&gt;</code> (hyperlinks).</li>
+<li>House analogy: <strong>HTML is the foundation / skeleton</strong> (structure). <strong>CSS</strong> (Cascading Style Sheets) is the decoration, design and colors (style).</li>
+<li>You need a <strong>modern web browser</strong> (Chrome, Firefox, Edge, Safari) and a <strong>text editor</strong> (such as VS Code, which is free).</li>
+<li>Why learn it: almost every business has an online presence, so knowing how to manage a website is a useful skill.</li>
+</ul>
+
+<h2 id="t2">2. Setup: VS Code, Project Folder, Live Server</h2>
+<ol>
+<li>Download VS Code from <em>code.visualstudio.com</em> (pick your operating system) and install it.</li>
+<li>In VS Code, choose <strong>Open Folder</strong> and create a folder for your website (example: <code>website</code> on the desktop).</li>
+<li>Create a new file named <strong>index.html</strong>. The homepage should be named <code>index</code> because most servers return the index file as the homepage.</li>
+<li>Install the <strong>Live Server</strong> extension (Extensions tab, search "live server", install). It automatically refreshes the browser when you save your HTML file.</li>
+<li>To view the page: right-click the HTML file, then <strong>Open with Live Server</strong>.</li>
+</ol>
+
+<h2 id="t3">3. HTML Basics</h2>
+<h3>Basic page skeleton</h3>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My first website&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;This is an H1 heading&lt;/h1&gt;
+    &lt;p&gt;Some text goes here.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<table border="1" cellpadding="4">
+<tr><th>Part</th><th>Meaning</th></tr>
+<tr><td><code>&lt;!DOCTYPE html&gt;</code></td><td>Declaration that the document is an HTML5 document (most recent version).</td></tr>
+<tr><td><code>&lt;html&gt;</code></td><td>Root element of the page.</td></tr>
+<tr><td><code>&lt;head&gt;</code></td><td>Information about the page (such as the title). Not visible content.</td></tr>
+<tr><td><code>&lt;title&gt;</code></td><td>Text shown in the browser tab.</td></tr>
+<tr><td><code>&lt;body&gt;</code></td><td>The visible content of the page.</td></tr>
+</table>
+
+<h3>Headings, paragraphs and other basics</h3>
+<ul>
+<li><strong>Headings:</strong> <code>&lt;h1&gt;</code> (largest) down to <code>&lt;h6&gt;</code> (smallest). Used for titles or other large text.</li>
+<li><strong>Paragraph:</strong> <code>&lt;p&gt;</code>. Paragraphs are separated by a line break, and they ignore extra spaces and new lines in your code.</li>
+<li><strong>Line break:</strong> <code>&lt;br&gt;</code> (self-closing, no closing tag needed).</li>
+<li><strong>Horizontal rule:</strong> <code>&lt;hr&gt;</code> (self-closing). Draws a horizontal line, nice after a title.</li>
+<li><strong>Preformatted text:</strong> <code>&lt;pre&gt;</code> keeps the spaces and line breaks you type (useful for song lyrics).</li>
+<li><strong>Comments:</strong> <code>&lt;!-- this is a comment --&gt;</code>. Not displayed; used as notes for yourself or other developers.</li>
+<li>Typing <code>lorem</code> then Tab in VS Code generates sample Latin-like text.</li>
+<li>Typing <code>!</code> then Tab in VS Code generates a basic HTML template.</li>
+</ul>
+<p><strong>Remember:</strong> Self-closing tags (<code>br</code>, <code>hr</code>, <code>img</code>, <code>input</code>, <code>link</code>) have no content, so they have no closing tag.</p>
+
+<h2 id="t4">4. Hyperlinks</h2>
+<p>A <strong>hyperlink</strong> is a digital reference to data that a user can follow by clicking or tapping. Use the anchor tag <code>&lt;a&gt;</code> with the <code>href</code> attribute.</p>
+<pre>
+&lt;a href="https://www.google.com" target="_blank" title="Goes to Google"&gt;Click me&lt;/a&gt;
+</pre>
+<ul>
+<li><strong>Attribute</strong> = usually a name/value pair that modifies the behavior of an element.</li>
+<li><code>a</code> = anchor. <code>href</code> = hypertext reference (what you are linking to; a web page or file).</li>
+<li><code>target="_blank"</code> opens the link in a new tab or window (optional).</li>
+<li><code>title</code> shows extra information as a tooltip on hover (optional).</li>
+<li><strong>Absolute URL:</strong> full address, e.g. <code>https://www.google.com</code>.</li>
+<li><strong>Relative URL:</strong> a file path relative to the current file. Files in the same folder only need the file name, e.g. <code>href="lyrics.html"</code>.</li>
+<li><strong>Email link:</strong> <code>&lt;a href="mailto:test@fake.com"&gt;Email me&lt;/a&gt;</code> starts the process of sending an email.</li>
+</ul>
+
+<h2 id="t5">5. Images</h2>
+<pre>
+&lt;img src="dog.png" height="200" alt="This is a picture of a dog"&gt;
+</pre>
+<ul>
+<li><code>&lt;img&gt;</code> is a <strong>self-closing</strong> tag.</li>
+<li><code>src</code> = source: the file name including the extension (be sure the extension is correct, e.g. png vs jpg).</li>
+<li><code>height</code> / <code>width</code> set the dimensions. If you set only one, the other adjusts automatically. Setting both can compress/distort the image.</li>
+<li><code>alt</code> = alternative text. It displays if the image fails to load, and <strong>screen readers</strong> read it aloud for visually impaired users. Always write a brief description.</li>
+<li><strong>Image as a hyperlink:</strong> surround the <code>img</code> with <code>&lt;a href="..."&gt;...&lt;/a&gt;</code>.</li>
+<li><strong>GIFs</strong> are included the same way as other images.</li>
+<li><strong>Images folder:</strong> if images are kept in a folder, include the folder in the path: <code>src="images/dog.png"</code>.</li>
+</ul>
+
+<h2 id="t6">6. Audio</h2>
+<pre>
+&lt;audio controls&gt;
+  &lt;source src="music/song.mp3" type="audio/mp3"&gt;
+  &lt;source src="music/song.wav" type="audio/wav"&gt;
+&lt;/audio&gt;
+</pre>
+<ul>
+<li>Use a pair of <code>&lt;audio&gt;</code> tags with <code>&lt;source&gt;</code> element(s) inside. <code>src</code> is the audio file name (with extension).</li>
+<li><code>controls</code>: shows play, pause, mute, fast forward, rewind and playback speed. Without it, nothing appears.</li>
+<li><code>autoplay</code>: plays automatically (not recommended, people find it annoying). If used, add <code>muted</code>.</li>
+<li><code>muted</code>: starts muted.</li>
+<li><code>loop</code>: repeats the audio.</li>
+<li><strong>Fallbacks:</strong> add more <code>source</code> elements (e.g. a WAV backup for an MP3). The <code>type</code> attribute tells the browser the file type (<code>audio/mp3</code>, <code>audio/wav</code>).</li>
+<li>Tip: put audio files in a <code>music</code> folder and use <code>src="music/filename"</code>. Add a <code>&lt;p&gt;</code> before each player to label the song.</li>
+</ul>
+
+<h2 id="t7">7. Video</h2>
+<pre>
+&lt;video width="500" controls autoplay muted loop&gt;
+  &lt;source src="zelda.mp4" type="video/mp4"&gt;
+  &lt;source src="zelda.webm" type="video/webm"&gt;
+&lt;/video&gt;
+</pre>
+<ul>
+<li>Supported formats: <strong>mp4</strong>, <strong>webm</strong>, <strong>ogg</strong>.</li>
+<li>Use a pair of <code>&lt;video&gt;</code> tags. Set <code>width</code> or <code>height</code> (the other adjusts automatically).</li>
+<li><code>controls</code> lets the user play the video. <code>autoplay</code> plays on page load (always add <code>muted</code> with it). <code>loop</code> repeats it.</li>
+<li>Use <code>&lt;source&gt;</code> elements with <code>type</code> (e.g. <code>video/mp4</code>) to provide backup formats. The browser uses the first one it supports.</li>
+<li>A video can be turned into a hyperlink by surrounding it with <code>&lt;a&gt;</code>. Use <code>target="_blank"</code> to open in a new tab.</li>
+</ul>
+
+<h2 id="t8">8. Favicons</h2>
+<p>A <strong>favicon</strong> is the small icon shown in the browser tab.</p>
+<pre>
+&lt;head&gt;
+  &lt;link rel="icon" type="image/jpg" href="images/favicon.jpg"&gt;
+&lt;/head&gt;
+</pre>
+<ul>
+<li>Recommended image size: at least <strong>96 x 96 pixels</strong>.</li>
+<li>Most modern browsers accept <strong>ico, png, gif, jpeg, svg</strong>.</li>
+<li><code>&lt;link&gt;</code> is self-closing and specifies the relationship between this document and an external source.</li>
+<li><code>rel="icon"</code> (relationship = icon), <code>type="image/&lt;file type&gt;"</code>, <code>href</code> = relative file location.</li>
+<li>If the image is in a folder, include the folder in the path (<code>images/favicon.jpg</code>).</li>
+<li>The <code>link</code> tag goes inside the <code>head</code>.</li>
+</ul>
+
+<h2 id="t9">9. Text Formatting</h2>
+<p>Text formatting gives text special emphasis. Surround the text with the proper pair of tags. <strong>Always close your tags</strong>, or the effect will cascade through the rest of the document.</p>
+<table border="1" cellpadding="4">
+<tr><th>Tag</th><th>Effect</th></tr>
+<tr><td><code>&lt;b&gt;</code></td><td><b>Bold</b></td></tr>
+<tr><td><code>&lt;i&gt;</code></td><td><i>Italic</i></td></tr>
+<tr><td><code>&lt;u&gt;</code></td><td><u>Underline</u></td></tr>
+<tr><td><code>&lt;del&gt;</code></td><td><del>Deleted text</del></td></tr>
+<tr><td><code>&lt;big&gt;</code></td><td>Big text (larger than surrounding text)</td></tr>
+<tr><td><code>&lt;small&gt;</code></td><td><small>Small text</small></td></tr>
+<tr><td><code>&lt;sub&gt;</code></td><td>Subscript (smaller, just below the line), e.g. H<sub>2</sub>O</td></tr>
+<tr><td><code>&lt;sup&gt;</code></td><td>Superscript (smaller, just above the line), e.g. x<sup>2</sup></td></tr>
+<tr><td><code>&lt;tt&gt;</code></td><td><tt>Monospaced text</tt></td></tr>
+<tr><td><code>&lt;mark&gt;</code></td><td><mark>Highlighted text</mark> (like a highlighter; color can be changed with CSS)</td></tr>
+</table>
+<pre>
+&lt;mark style="background-color:lightgreen;"&gt;highlighted&lt;/mark&gt;
+</pre>
+
+<h2 id="t10">10. Span &amp; Div</h2>
+<table border="1" cellpadding="4">
+<tr><th>Tag</th><th>Type</th><th>Behavior</th></tr>
+<tr><td><code>&lt;span&gt;</code></td><td>Inline container</td><td>Groups elements for styling; only takes up as much space as its content.</td></tr>
+<tr><td><code>&lt;div&gt;</code></td><td>Block-level container</td><td>Groups elements for styling (div = division); takes up the entire width of the document.</td></tr>
+</table>
+<pre>
+&lt;h1&gt;&lt;span style="background-color:tomato;"&gt;This is a span title&lt;/span&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;div style="background-color:cyan;"&gt;This is a div title&lt;/div&gt;&lt;/h1&gt;
+</pre>
+<ul>
+<li>Both are used to group HTML so you can apply (inline) CSS styling to whatever is between the tags.</li>
+<li>They will be used much more once you reach CSS.</li>
+</ul>
+
+<h2 id="t11">11. Lists</h2>
+<p>Three types of lists:</p>
+<table border="1" cellpadding="4">
+<tr><th>List type</th><th>Tags</th><th>Notes</th></tr>
+<tr><td>Unordered list</td><td><code>&lt;ul&gt;</code> with <code>&lt;li&gt;</code> items</td><td>Bulleted; order doesn't matter (e.g. grocery list).</td></tr>
+<tr><td>Ordered list</td><td><code>&lt;ol&gt;</code> with <code>&lt;li&gt;</code> items</td><td>Numbered; order matters (e.g. to-do list).</td></tr>
+<tr><td>Description list</td><td><code>&lt;dl&gt;</code> with <code>&lt;dt&gt;</code> (term) and <code>&lt;dd&gt;</code> (definition)</td><td>Key/value pairs: a term and its definition.</td></tr>
+</table>
+<pre>
+&lt;h4&gt;Groceries&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Milk&lt;/li&gt;
+  &lt;li&gt;Eggs&lt;/li&gt;
+  &lt;li&gt;Coffee supplies
+    &lt;ul&gt;
+      &lt;li&gt;Coffee beans&lt;/li&gt;
+      &lt;li&gt;Creamer&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;Dragon&lt;/dt&gt;
+  &lt;dd&gt;A mythical monster resembling a giant reptile.&lt;/dd&gt;
+&lt;/dl&gt;
+</pre>
+<ul>
+<li><code>li</code> = list item. <code>dt</code> = description term. <code>dd</code> = description definition.</li>
+<li><strong>Nested lists:</strong> place a new <code>ul</code> inside an <code>li</code> (nested bullets appear hollow).</li>
+<li>Lists can be styled with CSS (e.g. background color, border).</li>
+</ul>
+
+<h2 id="t12">12. Tables</h2>
+<pre>
+&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Sunday&lt;/th&gt;
+    &lt;th&gt;Monday&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr align="center"&gt;
+    &lt;td&gt;Closed&lt;/td&gt;
+    &lt;td&gt;9 to 5&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+<table border="1" cellpadding="4">
+<tr><th>Tag / Attribute</th><th>Meaning</th></tr>
+<tr><td><code>&lt;table&gt;</code></td><td>The table.</td></tr>
+<tr><td><code>&lt;tr&gt;</code></td><td>Table row.</td></tr>
+<tr><td><code>&lt;th&gt;</code></td><td>Table header cell (one per column in the header row).</td></tr>
+<tr><td><code>&lt;td&gt;</code></td><td>Table data cell.</td></tr>
+<tr><td><code>border</code></td><td>On <code>table</code>. 0 = no border; higher number = thicker border.</td></tr>
+<tr><td><code>align</code></td><td>On <code>tr</code>. Values such as <code>center</code> to align the data.</td></tr>
+<tr><td><code>width</code></td><td>On <code>th</code>. Makes columns a uniform size.</td></tr>
+<tr><td><code>style="background-color: ..."</code></td><td>Inline CSS to color the table or individual rows.</td></tr>
+</table>
+<ul>
+<li>The first row is usually the table headers; add one header per column.</li>
+<li>Each column's data must line up under its header, so use the same number of cells in each row.</li>
+<li>Add more rows with more <code>tr</code> tags.</li>
+</ul>
+
+<h2 id="t13">13. Buttons</h2>
+<pre>
+&lt;button style="font-size:25px; background-color:gray; color:lightblue; border-radius:25px;"&gt;Click me&lt;/button&gt;
+</pre>
+<ul>
+<li>Use a pair of <code>&lt;button&gt;</code> tags with text between them.</li>
+<li>Style with inline CSS (separate properties with semicolons): <code>font-size</code>, <code>background-color</code>, <code>color</code>, <code>border-radius</code> (rounded corners).</li>
+<li><strong>Button as a link:</strong> wrap the button in <code>&lt;a href="page2.html"&gt;...&lt;/a&gt;</code> to go to another page or site.</li>
+<li><strong>Button that runs JavaScript</strong> (just for awareness): use the <code>onclick</code> attribute with a function name. The function is defined inside <code>&lt;script&gt;</code> tags.</li>
+</ul>
+<pre>
+&lt;script&gt;
+  function doSomething() {
+    document.getElementById("greeting").innerHTML = "Goodbye";
+  }
+&lt;/script&gt;
+&lt;button onclick="doSomething()"&gt;Click me&lt;/button&gt;
+&lt;p id="greeting"&gt;Hello&lt;/p&gt;
+</pre>
+<ul>
+<li>With many CSS properties, using a stylesheet is recommended instead of inline CSS (covered later).</li>
+</ul>
+
+<h2 id="t14">14. Forms</h2>
+<h3>The form element</h3>
+<pre>
+&lt;form action="action_page.php" method="post" enctype="multipart/form-data"&gt;
+  ...
+&lt;/form&gt;
+</pre>
+<ul>
+<li><code>action</code>: the location (file) the form data is sent to. Form submission is handled by a backend language such as PHP.</li>
+<li><code>method</code>: <strong>post</strong> for sensitive/confidential data (username, password); <strong>get</strong> for non-sensitive data.</li>
+<li><code>enctype="multipart/form-data"</code>: use when sending large data such as an image. Data is split into multiple parts and reassembled when received.</li>
+</ul>
+
+<h3>Labels</h3>
+<ul>
+<li>Add a <code>&lt;label&gt;</code> so users know what to enter.</li>
+<li>The label's <code>for</code> attribute must match the input's <code>id</code>. This helps screen readers, and clicking the label moves the cursor to the input.</li>
+</ul>
+<pre>
+&lt;label for="username"&gt;Username:&lt;/label&gt;
+&lt;input type="text" id="username" required minlength="6" maxlength="15" placeholder="SpongeBob"&gt;
+</pre>
+
+<h3>Form elements and input types</h3>
+<table border="1" cellpadding="4">
+<tr><th>Element</th><th>Code</th><th>Notes</th></tr>
+<tr><td>Text box</td><td><code>&lt;input type="text"&gt;</code></td><td>Default type is text.</td></tr>
+<tr><td>Password</td><td><code>&lt;input type="password"&gt;</code></td><td>Characters are hidden.</td></tr>
+<tr><td>Email</td><td><code>&lt;input type="email"&gt;</code></td><td>Browser checks for a valid email format (needs an @).</td></tr>
+<tr><td>Telephone</td><td><code>&lt;input type="tel"&gt;</code></td><td>Use <code>pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"</code> to force a format.</td></tr>
+<tr><td>Date</td><td><code>&lt;input type="date"&gt;</code></td><td>Shows an interactive calendar.</td></tr>
+<tr><td>Number</td><td><code>&lt;input type="number" min="0" max="99" value="1"&gt;</code></td><td>Use min, max and a default value.</td></tr>
+<tr><td>Radio buttons</td><td><code>&lt;input type="radio" name="title" value="Mr"&gt;</code></td><td>Only one can be selected per group. Buttons in the same group must share the same <code>name</code>. Each needs its own <code>value</code>.</td></tr>
+<tr><td>Drop-down menu</td><td><code>&lt;select&gt;</code> with <code>&lt;option value="..."&gt;</code></td><td>Options go inside the select tags.</td></tr>
+<tr><td>Checkbox</td><td><code>&lt;input type="checkbox"&gt;</code></td><td>For yes/no choices (e.g. subscribe).</td></tr>
+<tr><td>Text area</td><td><code>&lt;textarea rows="3" cols="25"&gt;&lt;/textarea&gt;</code></td><td>Multi-line text; set size with rows and columns.</td></tr>
+<tr><td>File upload</td><td><code>&lt;input type="file" accept="image/png, image/jpeg"&gt;</code></td><td><code>accept</code> limits file types (comma-separated).</td></tr>
+<tr><td>Submit button</td><td><code>&lt;input type="submit"&gt;</code></td><td>Sends the form data.</td></tr>
+<tr><td>Reset button</td><td><code>&lt;input type="reset"&gt;</code></td><td>Clears the form data.</td></tr>
+</table>
+
+<h3>Useful input attributes</h3>
+<ul>
+<li><code>required</code>: the form cannot be submitted until the field is filled in.</li>
+<li><code>minlength</code> / <code>maxlength</code>: minimum / maximum number of characters.</li>
+<li><code>placeholder</code>: faded hint showing the expected format; disappears when you type.</li>
+<li><code>pattern</code>: restricts input to a format (e.g. phone numbers).</li>
+<li><code>min</code> / <code>max</code> / <code>value</code>: for number inputs (smallest, largest, default).</li>
+<li><code>id</code>: unique identifier; matches the label's <code>for</code>.</li>
+<li><code>name</code>: groups radio buttons together.</li>
+<li><code>accept</code>: allowed file types for file inputs.</li>
+</ul>
+
+<h2 id="t15">15. Headers &amp; Footers</h2>
+<p><code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> are <strong>semantic tags</strong>: they describe their meaning to both the web browser and the developer. They help organize content and make it easier to apply CSS to everything inside them.</p>
+<pre>
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Welcome to My Page&lt;/h1&gt;
+    &lt;a href=""&gt;Home&lt;/a&gt; &lt;a href=""&gt;About us&lt;/a&gt;
+    &lt;hr&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;h4&gt;Check out these cool moves:&lt;/h4&gt;
+    &lt;img src="profile.jpg" alt="profile pic"&gt;
+    &lt;p&gt;Main content here.&lt;/p&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+    &lt;hr&gt;
+    Author: Your Name &lt;br&gt;
+    &amp;copy; All rights reserved &lt;br&gt;
+    &lt;small&gt;&lt;a href="mailto:bro@fake.com"&gt;bro@fake.com&lt;/a&gt;&lt;/small&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+</pre>
+<ul>
+<li><strong>Header:</strong> introductory content at the top: title, subtitle, logo, navigation bar (hyperlinks).</li>
+<li><strong>Footer:</strong> concluding content at the bottom: author, copyright, contact info (phone, email).</li>
+<li><strong>Main:</strong> wraps the main content of the page (helps organization).</li>
+<li>Copyright symbol in HTML: <code>&amp;copy;</code> (shows &copy;).</li>
+<li>Inline CSS example: <code>&lt;header style="background-color: mediumpurple;"&gt;</code>.</li>
+</ul>
+
+<hr>
+
+<h2 id="qr">Quick Reference: Tags and Attributes</h2>
+<table border="1" cellpadding="4">
+<tr><th>Tag</th><th>Purpose</th><th>Closing tag?</th></tr>
+<tr><td><code>&lt;!DOCTYPE html&gt;</code></td><td>Declares HTML5 document</td><td>No</td></tr>
+<tr><td><code>&lt;html&gt;</code></td><td>Root element</td><td>Yes</td></tr>
+<tr><td><code>&lt;head&gt;</code></td><td>Page information</td><td>Yes</td></tr>
+<tr><td><code>&lt;title&gt;</code></td><td>Browser tab title</td><td>Yes</td></tr>
+<tr><td><code>&lt;body&gt;</code></td><td>Visible content</td><td>Yes</td></tr>
+<tr><td><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code></td><td>Headings</td><td>Yes</td></tr>
+<tr><td><code>&lt;p&gt;</code></td><td>Paragraph</td><td>Yes</td></tr>
+<tr><td><code>&lt;pre&gt;</code></td><td>Preformatted text</td><td>Yes</td></tr>
+<tr><td><code>&lt;br&gt;</code></td><td>Line break</td><td>No</td></tr>
+<tr><td><code>&lt;hr&gt;</code></td><td>Horizontal rule</td><td>No</td></tr>
+<tr><td><code>&lt;a&gt;</code></td><td>Hyperlink (anchor)</td><td>Yes</td></tr>
+<tr><td><code>&lt;img&gt;</code></td><td>Image</td><td>No</td></tr>
+<tr><td><code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code></td><td>Media players</td><td>Yes</td></tr>
+<tr><td><code>&lt;source&gt;</code></td><td>Media file (and backups)</td><td>No</td></tr>
+<tr><td><code>&lt;link&gt;</code></td><td>Links external resource (favicon)</td><td>No</td></tr>
+<tr><td><code>&lt;b&gt; &lt;i&gt; &lt;u&gt; &lt;del&gt; &lt;big&gt; &lt;small&gt; &lt;sub&gt; &lt;sup&gt; &lt;tt&gt; &lt;mark&gt;</code></td><td>Text formatting</td><td>Yes</td></tr>
+<tr><td><code>&lt;span&gt;</code></td><td>Inline container</td><td>Yes</td></tr>
+<tr><td><code>&lt;div&gt;</code></td><td>Block container</td><td>Yes</td></tr>
+<tr><td><code>&lt;ul&gt; &lt;ol&gt; &lt;li&gt;</code></td><td>Unordered / ordered lists and items</td><td>Yes</td></tr>
+<tr><td><code>&lt;dl&gt; &lt;dt&gt; &lt;dd&gt;</code></td><td>Description list, term, definition</td><td>Yes</td></tr>
+<tr><td><code>&lt;table&gt; &lt;tr&gt; &lt;th&gt; &lt;td&gt;</code></td><td>Table, row, header cell, data cell</td><td>Yes</td></tr>
+<tr><td><code>&lt;button&gt;</code></td><td>Button</td><td>Yes</td></tr>
+<tr><td><code>&lt;script&gt;</code></td><td>JavaScript code</td><td>Yes</td></tr>
+<tr><td><code>&lt;form&gt;</code></td><td>Form</td><td>Yes</td></tr>
+<tr><td><code>&lt;label&gt;</code></td><td>Label for an input</td><td>Yes</td></tr>
+<tr><td><code>&lt;input&gt;</code></td><td>Form input (text, password, email, tel, date, number, radio, checkbox, file, submit, reset)</td><td>No</td></tr>
+<tr><td><code>&lt;select&gt; &lt;option&gt;</code></td><td>Drop-down menu and its options</td><td>Yes</td></tr>
+<tr><td><code>&lt;textarea&gt;</code></td><td>Multi-line text box</td><td>Yes</td></tr>
+<tr><td><code>&lt;header&gt; &lt;main&gt; &lt;footer&gt;</code></td><td>Semantic page sections</td><td>Yes</td></tr>
+</table>
+
+<h3>Common attributes</h3>
+<table border="1" cellpadding="4">
+<tr><th>Attribute</th><th>Used with</th><th>Purpose</th></tr>
+<tr><td><code>href</code></td><td>a, link</td><td>Location to link to</td></tr>
+<tr><td><code>src</code></td><td>img, audio/video source</td><td>File location</td></tr>
+<tr><td><code>alt</code></td><td>img</td><td>Alternative text</td></tr>
+<tr><td><code>height</code>, <code>width</code></td><td>img, video, table cells</td><td>Dimensions</td></tr>
+<tr><td><code>target="_blank"</code></td><td>a</td><td>Open in a new tab</td></tr>
+<tr><td><code>title</code></td><td>a</td><td>Tooltip text</td></tr>
+<tr><td><code>type</code></td><td>source, link, input</td><td>File type or input type</td></tr>
+<tr><td><code>rel</code></td><td>link</td><td>Relationship (icon)</td></tr>
+<tr><td><code>controls</code>, <code>autoplay</code>, <code>muted</code>, <code>loop</code></td><td>audio, video</td><td>Playback options</td></tr>
+<tr><td><code>style</code></td><td>any</td><td>Inline CSS</td></tr>
+<tr><td><code>id</code></td><td>any</td><td>Unique identifier</td></tr>
+<tr><td><code>for</code></td><td>label</td><td>Matches an input's id</td></tr>
+<tr><td><code>action</code>, <code>method</code>, <code>enctype</code></td><td>form</td><td>Where/how to send form data</td></tr>
+<tr><td><code>required</code>, <code>minlength</code>, <code>maxlength</code>, <code>placeholder</code>, <code>pattern</code></td><td>input</td><td>Validation and hints</td></tr>
+<tr><td><code>min</code>, <code>max</code>, <code>value</code></td><td>input (number), option, radio</td><td>Limits and values</td></tr>
+<tr><td><code>name</code></td><td>radio input</td><td>Groups radio buttons</td></tr>
+<tr><td><code>accept</code></td><td>input (file)</td><td>Allowed file types</td></tr>
+<tr><td><code>rows</code>, <code>cols</code></td><td>textarea</td><td>Size</td></tr>
+<tr><td><code>border</code>, <code>align</code></td><td>table, tr</td><td>Border thickness, alignment</td></tr>
+<tr><td><code>onclick</code></td><td>button</td><td>Runs a JavaScript function</td></tr>
+</table>
+
+<hr>
+
+</body>
+</html>
